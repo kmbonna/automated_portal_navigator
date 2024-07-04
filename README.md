@@ -35,3 +35,6 @@ By automating this process, nearly 9 hours of manual labor is saved each time th
 
 For the client to be able to use this program, a couple of options were suggested. However, the most user-friendly, hassle-free for the user was to convert the script into an executable .exe file that they can run on their local computer with no need for dependencies. 
 
+
+Pyinstaller was used to convert the python file into an executable file, the chrome driver was also added to the binary file so that the client doesnt have to install the driver separately.
+
