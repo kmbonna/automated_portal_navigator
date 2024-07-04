@@ -14,28 +14,22 @@ This project automates the refreshing of job postings on a corporate job portal.
 With each job refresh taking approximately 40 seconds manually, automating this process saves a significant amount of time:
 
 - **Manual Time for One Refresh**: 40 seconds
-- **Total Time for 800 Refreshes**: \(800 \times 40\) seconds = 32,000 seconds = approximately 8 hours and 53 minutes.
+- **Total Time for 800 Refreshes**: (800 * 40) seconds = 32,000 seconds = approximately 8 hours and 53 minutes.
 
 By automating this process, nearly 9 hours of manual labor is saved each time the job postings need to be refreshed, which is generally each two weeks.
-
-## Screenshots
-
-Here are some visuals demonstrating the project in action:
-
-![Job Posting Overview](https://example.com/path_to_screenshot_84.png)
-*Job Posting Overview*
-
-![Job Posting Refresh Panel](https://example.com/path_to_screenshot_85.png)
-*Job Posting Refresh Panel*
 
 ## How It Works
 
 1. **Load the Job Posting Page**: The script navigates to the job posting section.
-2. **Opens the Job board postings**: The script opens the job boards that this posting is advertised on. put image here
-3. **Unlists the posting on all job boards**: Mitigating occasional 404 webpage errors.
-4. **Re-lists the posting on all job boards**: put image here
-5. **Repeat steps 1-4**.
-6. **Log Results**: Outputs the completion of each job posting refresh.
+![Job Postings](images/jobposting.png)
+*Job Postings*
+3. **Opens the Job board postings**: The script opens the job boards that this posting is advertised on   
+4. **Unlists the posting on all job boards**: Mitigating occasional 404 webpage errors.
+5. **Re-lists the posting on all job boards**:
+   ![Job Posting Overview](images/jobboard.png)
+*Job Board Interface where refreshing happens*
+7. **Repeat steps 1-4**.
+8. **Log Results**: Outputs the completion of each job posting refresh.
 
 ## Setup and Installation
 
