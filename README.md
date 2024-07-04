@@ -14,7 +14,7 @@ This project automates the refreshing of job postings on a corporate job portal.
 With each job refresh taking approximately 40 seconds manually, automating this process saves a significant amount of time:
 
 - **Manual Time for One Refresh**: 40 seconds
-- **Total Time for 800 Refreshes**: \(800 \times 40\) seconds = 32,000 seconds = approximately 8 hours and 53 minutes.
+- **Total Time for 800 Refreshes**: (800 * 40) seconds = 32,000 seconds = approximately 8 hours and 53 minutes.
 
 By automating this process, nearly 9 hours of manual labor is saved each time the job postings need to be refreshed, which is generally each two weeks.
 
@@ -22,10 +22,10 @@ By automating this process, nearly 9 hours of manual labor is saved each time th
 
 Here are some visuals demonstrating the project in action:
 
-![Job Posting Overview](https://example.com/path_to_screenshot_84.png)
+![Job Posting Overview](images/jobboard.png)
 *Job Posting Overview*
 
-![Job Posting Refresh Panel](https://example.com/path_to_screenshot_85.png)
+![Job Posting Refresh Panel](images/jobposting.png)
 *Job Posting Refresh Panel*
 
 ## How It Works
