@@ -27,6 +27,7 @@ CHROMEDRIVER_PATH = os.path.join(base_path, 'chromedriver.exe')
 EXCEL_FILE_PATH = 'modified_published_jobs.xlsx'
 
 def find_toggle_and_save(driver):
+    temp_state = "Not decided"
     try:
         job_board_button = WebDriverWait(driver, 50).until(
             EC.element_to_be_clickable((By.CSS_SELECTOR, "#job_boards > div.inline-block-card > div"))
@@ -51,11 +52,13 @@ def find_toggle_and_save(driver):
 
         # Check if the current URL is a 404 error page
         if "kalam.freshteam.com/404" in driver.current_url:
-            print("Encountered a 404 Error")
             driver.back()  # Navigate back
-            print("Navigated back to the previous page.")
     except WebDriverException as e:
         print("Error in find_toggle_and_save:", str(e))
+    else:
+        temp_state = "Success"  # Change state only if no exception occurs
+    
+    return temp_state
 
 def check_login(driver):
     try:
@@ -84,18 +87,24 @@ def refresh_jobs(driver, df, urls):
     print(f"Starting the automated refreshing process at row number {start_index + 2} at URL {urls[start_index]}")
 
     for i in range(start_index, len(urls)):
-        state = 'Online'
+        state = "Offline"
         if i % step == 0:
             print(f"Progress: {round(i / len(urls) * 100)}% complete")
         
         try:
             driver.get(urls[i])
-            find_toggle_and_save(driver)
-            state = 'Offline'
-            find_toggle_and_save(driver)
-            state = 'Online'
-            
-            df.at[i, 'Refreshed?'] = "Yes"
+            status = find_toggle_and_save(driver)
+            if status == "Success":
+                state = "Offline"
+
+            status = find_toggle_and_save(driver)
+            if status == "Success":
+                state = "Online"
+
+
+            if state == "Online":
+                df.at[i, 'Refreshed?'] = "Yes"
+
             df.to_excel(EXCEL_FILE_PATH, index=False)
 
         except WebDriverException as e:
