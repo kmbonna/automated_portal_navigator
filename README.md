@@ -1,10 +1,10 @@
 # Automated Job Posting Refresher
 
-## Project Overview
+## Overview
 
 This project automates the refreshing of job postings on a corporate job portal. Traditionally, refreshing these postings manually is not only tedious but also highly time-consuming. This automation significantly reduces the manual effort required and speeds up the process.
 
-## Time Savings
+### Time Savings
 
 With each job refresh taking approximately 40 seconds manually, automating this process saves a significant amount of time:
 
@@ -13,7 +13,7 @@ With each job refresh taking approximately 40 seconds manually, automating this 
 
 By automating this process, nearly 9 hours of manual labor is saved each time the job postings need to be refreshed, which is generally each two weeks.
 
-## How It Works
+## Steps and Framework
 
 1. **Load the Job Posting Page**: The script navigates to the job posting section.
 ![Job Postings](images/jobposting.png)
